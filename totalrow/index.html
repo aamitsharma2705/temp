@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ag-Grid React Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <style> html, body, #root { margin: 0; padding: 0; height: 100%; } 
+      div[class*='ag-row-level-'] .ag-group-expanded, div[class*='ag-row-level-'] .ag-group-contracted{
+      
+      visibility: hidden;
+    }
+    .customHeaderMenuButton {
+        margin-top: 5px;
+        margin-left: 4px;
+        float: left;
+      }
+      
+      .customHeaderLabel {
+        margin-left: 5px;
+        margin-top: 3px;
+        float: left;
+      }
+      
+      .customSortDownLabel {
+        float: left;
+        margin-left: 10px;
+        margin-top: 5px;
+      }
+      
+      .customSortUpLabel {
+        float: left;
+        margin-left: 3px;
+        margin-top: 4px;
+      }
+      
+      .customSortRemoveLabel {
+        float: left;
+        font-size: 11px;
+        margin-left: 3px;
+        margin-top: 6px;
+      }
+    
+    </style>
+</head>
+<body>
+    <div id="root">Loading ag-Grid React example&hellip;</div>
+    
+    <script>
+        var appLocation = '';
+        var boilerplatePath = '';
+        var systemJsMap = {"ag-grid":"https:\/\/unpkg.com\/ag-grid@15.0.0\/dist\/ag-grid.js","ag-grid\/main":"https:\/\/unpkg.com\/ag-grid@15.0.0\/dist\/ag-grid.js","ag-grid-enterprise":"https:\/\/unpkg.com\/ag-grid-enterprise@15.0.0\/","ag-grid-react":"npm:ag-grid-react@15.0.0\/","ag-grid-angular":"npm:ag-grid-angular@15.0.0\/"}    </script>
+
+    <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+
+    <script>
+      System.import('index.jsx').catch( function(err) { console.error(err); })
+    </script>
+</body>
+</html>
