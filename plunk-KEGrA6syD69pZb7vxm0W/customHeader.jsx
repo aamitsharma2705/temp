@@ -5,11 +5,14 @@ export default class CustomHeader extends Component {
         super(props);
 
         props.reactContainer.style.display = "inline-block";
-
+        
+        this.expanded = true;
+        
         this.state = {
             ascSort: 'inactive',
             descSort: 'inactive',
-            noSort: 'inactive'
+            noSort: 'inactive',
+            expanded: this.props.expanded
         };
 
         props.column.addEventListener('sortChanged', this.onSortChanged.bind(this));
@@ -18,14 +21,19 @@ export default class CustomHeader extends Component {
     componentDidMount() {
         this.onSortChanged();
     }
+    
+    expandAll = ()=>{
+      this.setState({expanded: !this.state.expanded})
+      this.props.expandHandler()
+    }
 
     render() {
         let ExpandIcon = null;
         if (this.props.showExpandIcon) {
             ExpandIcon =
-                <div onClick={this.props.expandHandler}
+                <div onClick={this.expandAll}
                      className="customHeaderMenuButton">
-                    <i >+/-</i>
+                    <i className={this.state.expanded ?'fa fa-chevron-up':'fa fa-chevron-down'}></i>
                 </div>
         }
 
